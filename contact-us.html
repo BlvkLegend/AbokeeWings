@@ -1,105 +1,241 @@
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
-<div style="font-family:'DM Sans',system-ui,sans-serif;background:#1a0533;color:#f9f5ff;margin:0;padding:0;width:100%;overflow-x:hidden;">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact Us — Abokee Wings</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{--deep:#0a0118;--dark:#130228;--mid:#1e0540;--purple:#2d0a52;--gold:#f5a623;--gold2:#ffc93c;--gold-glow:rgba(245,166,35,0.35);--gold-dim:rgba(245,166,35,0.12);--cream:#f9f5ff;--muted:rgba(249,245,255,0.6);--dimmer:rgba(249,245,255,0.35);}
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{font-family:'Outfit',sans-serif;background:var(--deep);color:var(--cream);overflow-x:hidden;cursor:none;}
+  #cursor{width:12px;height:12px;background:var(--gold);border-radius:50%;position:fixed;top:0;left:0;pointer-events:none;z-index:99999;mix-blend-mode:difference;}
+  #cursor-ring{width:36px;height:36px;border:1.5px solid var(--gold);border-radius:50%;position:fixed;top:0;left:0;pointer-events:none;z-index:99998;opacity:0.6;transition:transform 0.35s cubic-bezier(.25,.46,.45,.94);}
+  a,button{cursor:none;}
+  nav{position:fixed;top:0;left:0;right:0;z-index:9000;padding:0 5%;display:flex;align-items:center;justify-content:space-between;height:72px;transition:background 0.4s,box-shadow 0.4s;}
+  nav.scrolled{background:rgba(10,1,24,0.92);backdrop-filter:blur(20px);box-shadow:0 1px 0 rgba(245,166,35,0.15),0 8px 32px rgba(0,0,0,0.4);}
+  .nav-logo{font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:700;color:var(--cream);text-decoration:none;}
+  .nav-logo span{color:var(--gold);}
+  .nav-links{display:flex;align-items:center;gap:32px;}
+  .nav-links a{color:var(--muted);text-decoration:none;font-size:13px;font-weight:500;position:relative;transition:color 0.25s;}
+  .nav-links a::after{content:'';position:absolute;bottom:-4px;left:0;width:0;height:1px;background:var(--gold);transition:width 0.3s;}
+  .nav-links a:hover{color:var(--cream);}
+  .nav-links a:hover::after{width:100%;}
+  .nav-links a.active{color:var(--gold);}
+  .nav-cta{background:var(--gold)!important;color:var(--deep)!important;padding:10px 24px!important;border-radius:3px;font-weight:700!important;font-size:12px!important;letter-spacing:1px!important;text-transform:uppercase;transition:background 0.25s,box-shadow 0.25s,transform 0.2s!important;}
+  .nav-cta::after{display:none!important;}
+  .nav-cta:hover{background:var(--gold2)!important;box-shadow:0 0 24px var(--gold-glow)!important;transform:translateY(-1px)!important;}
+  .hamburger{display:none;flex-direction:column;gap:5px;background:none;border:none;padding:8px;}
+  .hamburger span{display:block;width:24px;height:2px;background:var(--cream);transition:all 0.3s;}
+  .hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+  .hamburger.open span:nth-child(2){opacity:0;}
+  .hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+  .mobile-nav{display:none;position:fixed;top:72px;left:0;right:0;background:rgba(10,1,24,0.97);backdrop-filter:blur(20px);padding:32px 5%;flex-direction:column;gap:24px;border-bottom:1px solid rgba(245,166,35,0.15);z-index:8999;transform:translateY(-20px);opacity:0;transition:transform 0.3s,opacity 0.3s;}
+  .mobile-nav.visible{transform:translateY(0);opacity:1;}
+  .mobile-nav a{color:var(--muted);text-decoration:none;font-size:16px;font-weight:500;transition:color 0.2s;}
+  .mobile-nav a:hover{color:var(--gold);}
+  .mobile-nav .nav-cta{display:inline-block;text-align:center;color:var(--deep)!important;padding:14px 24px!important;font-size:13px!important;}
 
-<!-- NAV -->
-<div style="position:sticky;top:0;z-index:9999;background:rgba(26,5,51,0.97);border-bottom:1px solid rgba(245,166,35,0.2);padding:18px 5%;display:flex;align-items:center;justify-content:space-between;box-sizing:border-box;">
-  <a href="https://abokeeflights.wordpress.com" style="font-family:'Playfair Display',Georgia,serif;font-size:22px;font-weight:900;color:#f9f5ff;text-decoration:none;">Abokee<span style="color:#f5a623;">Flights</span></a>
-  <div style="display:flex;gap:24px;align-items:center;flex-wrap:wrap;">
-    <a href="https://abokeeflights.wordpress.com" style="color:rgba(249,245,255,0.75);text-decoration:none;font-size:13px;font-weight:500;">Home</a>
-    <a href="https://abokeeflights.wordpress.com/about-us" style="color:rgba(249,245,255,0.75);text-decoration:none;font-size:13px;font-weight:500;">About</a>
-    <a href="https://abokeeflights.wordpress.com/services" style="color:rgba(249,245,255,0.75);text-decoration:none;font-size:13px;font-weight:500;">Services</a>
-    <a href="https://abokeeflights.wordpress.com/destinations" style="color:rgba(249,245,255,0.75);text-decoration:none;font-size:13px;font-weight:500;">Destinations</a>
-    <a href="https://abokeeflights.wordpress.com/blog" style="color:rgba(249,245,255,0.75);text-decoration:none;font-size:13px;font-weight:500;">Blog</a>
-    <a href="https://abokeeflights.wordpress.com/contact-us" style="background:#f5a623;color:#1a0533;padding:10px 22px;font-size:13px;font-weight:700;text-decoration:none;border-radius:4px;">Get Started</a>
+  .page-hero{position:relative;padding:160px 5% 100px;text-align:center;overflow:hidden;}
+  .page-hero-bg{position:absolute;inset:0;background:url('https://images.unsplash.com/photo-1521791136064-7986c2920216?w=2000&q=85') center/cover;transform:scale(1.04);}
+  .page-hero-overlay{position:absolute;inset:0;background:linear-gradient(160deg,rgba(10,1,24,0.9),rgba(30,5,64,0.82));}
+  .page-hero-content{position:relative;z-index:1;}
+  .page-label{font-size:11px;letter-spacing:4px;text-transform:uppercase;color:var(--gold);margin-bottom:16px;font-weight:600;}
+  .page-h1{font-family:'Cormorant Garamond',serif;font-size:clamp(44px,7vw,90px);font-weight:700;line-height:1;letter-spacing:-2px;margin-bottom:20px;animation:fadeUp 0.9s ease both;}
+  .page-h1 em{font-style:italic;color:var(--gold);}
+  .page-sub{font-size:16px;color:var(--muted);max-width:540px;margin:0 auto;line-height:1.85;animation:fadeUp 1s 0.15s ease both;}
+  @keyframes fadeUp{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:translateY(0)}}
+
+  /* CONTACT LAYOUT */
+  .contact-section{padding:100px 5%;background:var(--deep);}
+  .contact-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1.5fr;gap:72px;align-items:start;}
+
+  /* INFO SIDE */
+  .contact-heading{font-family:'Cormorant Garamond',serif;font-size:clamp(32px,4vw,52px);font-weight:700;line-height:1.05;letter-spacing:-1px;margin-bottom:12px;}
+  .contact-heading em{font-style:italic;color:var(--gold);}
+  .contact-intro{font-size:15px;color:var(--muted);line-height:1.9;margin-bottom:48px;}
+  .info-items{display:flex;flex-direction:column;gap:28px;}
+  .info-item{display:flex;gap:20px;align-items:flex-start;}
+  .info-icon{width:52px;height:52px;border-radius:50%;background:var(--gold);display:flex;align-items:center;justify-content:center;font-size:22px;flex-shrink:0;box-shadow:0 0 20px rgba(245,166,35,0.3);transition:box-shadow 0.3s,transform 0.2s;}
+  .info-item:hover .info-icon{box-shadow:0 0 32px rgba(245,166,35,0.5);transform:scale(1.05);}
+  .info-label{font-size:10px;letter-spacing:2.5px;text-transform:uppercase;color:var(--gold);font-weight:600;margin-bottom:6px;}
+  .info-val{font-size:15px;color:var(--cream);font-weight:500;line-height:1.6;}
+  .info-val a{color:var(--cream);text-decoration:none;transition:color 0.2s;}
+  .info-val a:hover{color:var(--gold);}
+  .social-section{margin-top:40px;padding-top:36px;border-top:1px solid rgba(245,166,35,0.12);}
+  .social-label{font-size:10px;letter-spacing:2.5px;text-transform:uppercase;color:var(--gold);font-weight:600;margin-bottom:16px;}
+  .social-btns{display:flex;gap:10px;flex-wrap:wrap;}
+  .social-pill{display:flex;align-items:center;gap:8px;color:var(--muted);text-decoration:none;font-size:13px;background:var(--purple);padding:10px 18px;border-radius:4px;transition:background 0.25s,color 0.25s,transform 0.2s;border:1px solid rgba(245,166,35,0.08);}
+  .social-pill:hover{background:rgba(245,166,35,0.12);color:var(--gold);transform:translateY(-2px);}
+
+  /* FORM */
+  .form-card{background:var(--purple);border-radius:6px;padding:48px;box-shadow:0 16px 64px rgba(0,0,0,0.35),0 0 0 1px rgba(245,166,35,0.08);}
+  .form-title{font-family:'Cormorant Garamond',serif;font-size:30px;font-weight:700;margin-bottom:6px;}
+  .form-title em{font-style:italic;color:var(--gold);}
+  .form-sub{font-size:13px;color:var(--dimmer);margin-bottom:36px;line-height:1.6;}
+  .form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px;}
+  .form-field{margin-bottom:16px;}
+  .form-label{display:block;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:9px;font-weight:600;}
+  .form-input{width:100%;background:var(--dark);border:1px solid rgba(245,166,35,0.18);border-radius:4px;padding:14px 18px;color:var(--cream);font-size:14px;font-family:'Outfit',sans-serif;transition:border-color 0.3s,box-shadow 0.3s;outline:none;}
+  .form-input::placeholder{color:var(--dimmer);}
+  .form-input:focus{border-color:var(--gold);box-shadow:0 0 0 3px rgba(245,166,35,0.12),inset 0 0 0 1px rgba(245,166,35,0.1);}
+  select.form-input{appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='none' viewBox='0 0 12 12'%3E%3Cpath fill='%23f5a623' d='M6 8L1 3h10z'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 16px center;}
+  textarea.form-input{resize:vertical;min-height:130px;}
+  .submit-btn{width:100%;background:var(--gold);color:var(--deep);padding:17px;font-size:13px;font-weight:700;letter-spacing:2px;text-transform:uppercase;border:none;border-radius:4px;transition:background 0.25s,box-shadow 0.3s,transform 0.2s;position:relative;overflow:hidden;}
+  .submit-btn::after{content:'';position:absolute;inset:0;background:linear-gradient(90deg,transparent,rgba(255,255,255,0.15),transparent);transform:translateX(-100%);transition:transform 0.5s;}
+  .submit-btn:hover::after{transform:translateX(100%);}
+  .submit-btn:hover{background:var(--gold2);box-shadow:0 0 40px var(--gold-glow);transform:translateY(-2px);}
+  .form-note{font-size:12px;color:var(--dimmer);text-align:center;margin-top:14px;line-height:1.5;}
+
+  /* WHATSAPP CTA */
+  .wa-section{background:var(--dark);padding:80px 5%;text-align:center;border-top:1px solid rgba(245,166,35,0.08);}
+  .wa-icon{font-size:48px;display:block;margin-bottom:20px;animation:waFloat 3s ease-in-out infinite;}
+  @keyframes waFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+  .wa-h3{font-family:'Cormorant Garamond',serif;font-size:clamp(26px,3.5vw,44px);font-weight:700;margin-bottom:12px;}
+  .wa-h3 em{font-style:italic;color:var(--gold);}
+  .wa-p{font-size:15px;color:var(--muted);margin-bottom:32px;line-height:1.7;max-width:480px;margin-left:auto;margin-right:auto;}
+  .wa-btn{display:inline-flex;align-items:center;gap:10px;background:#25D366;color:#fff;padding:16px 38px;font-size:14px;font-weight:700;text-decoration:none;border-radius:4px;transition:background 0.25s,box-shadow 0.3s,transform 0.2s;letter-spacing:0.5px;}
+  .wa-btn:hover{background:#1aa855;box-shadow:0 0 32px rgba(37,211,102,0.45);transform:translateY(-2px);}
+
+  footer{background:var(--deep);padding:80px 5% 32px;border-top:1px solid rgba(245,166,35,0.12);}
+  .footer-grid{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr 1.4fr;gap:56px;margin-bottom:56px;}
+  .footer-brand .logo-f{font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:700;color:var(--cream);margin-bottom:14px;display:block;}
+  .footer-brand .logo-f span{color:var(--gold);}
+  .footer-brand p{font-size:13px;color:var(--dimmer);line-height:1.9;margin-bottom:24px;}
+  .social-row{display:flex;gap:10px;}
+  .social-btn{width:38px;height:38px;border-radius:50%;background:var(--gold-dim);display:flex;align-items:center;justify-content:center;font-size:13px;color:var(--gold);text-decoration:none;transition:background 0.25s,box-shadow 0.3s,transform 0.2s;border:1px solid rgba(245,166,35,0.15);font-weight:700;}
+  .social-btn:hover{background:var(--gold);color:var(--deep);box-shadow:0 0 20px var(--gold-glow);transform:translateY(-3px) scale(1.1);}
+  .footer-col-title{font-size:11px;letter-spacing:2.5px;text-transform:uppercase;color:var(--gold);margin-bottom:20px;font-weight:600;}
+  .footer-links{display:flex;flex-direction:column;}
+  .footer-links a{font-size:13px;color:var(--dimmer);text-decoration:none;padding:7px 0;transition:color 0.2s,padding-left 0.2s;}
+  .footer-links a:hover{color:var(--gold);padding-left:6px;}
+  .fci{margin-bottom:16px;}
+  .fci .lbl{font-size:11px;color:var(--gold);font-weight:600;letter-spacing:1px;text-transform:uppercase;margin-bottom:4px;}
+  .fci a,.fci div{font-size:13px;color:var(--dimmer);text-decoration:none;line-height:1.7;transition:color 0.2s;}
+  .fci a:hover{color:var(--gold);}
+  .footer-bottom{max-width:1200px;margin:0 auto;border-top:1px solid rgba(245,166,35,0.1);padding-top:24px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;font-size:12px;color:rgba(249,245,255,0.25);}
+  .footer-bottom b{color:var(--gold);font-weight:600;}
+  .wa-float{position:fixed;bottom:32px;right:32px;z-index:8000;width:56px;height:56px;border-radius:50%;background:#25D366;display:flex;align-items:center;justify-content:center;text-decoration:none;font-size:26px;box-shadow:0 4px 20px rgba(37,211,102,0.4);transition:transform 0.3s,box-shadow 0.3s;animation:waPulse 3s ease-in-out infinite;}
+  .wa-float:hover{transform:scale(1.12);box-shadow:0 6px 28px rgba(37,211,102,0.6);}
+  @keyframes waPulse{0%,100%{box-shadow:0 4px 20px rgba(37,211,102,0.4)}50%{box-shadow:0 4px 32px rgba(37,211,102,0.7)}}
+  .reveal{opacity:0;transform:translateY(36px);transition:opacity 0.7s ease,transform 0.7s ease;}
+  .reveal.in{opacity:1;transform:translateY(0);}
+  .reveal-delay-1{transition-delay:0.1s}.reveal-delay-2{transition-delay:0.2s}.reveal-delay-3{transition-delay:0.3s}
+  @media(max-width:900px){
+    .nav-links{display:none}.hamburger{display:flex}.mobile-nav{display:flex}
+    .contact-inner{grid-template-columns:1fr;gap:48px}
+    .footer-grid{grid-template-columns:1fr 1fr;gap:36px}
+  }
+  @media(max-width:600px){
+    .footer-grid{grid-template-columns:1fr}
+    .form-row{grid-template-columns:1fr}
+    .form-card{padding:28px 22px}
+  }
+</style>
+</head>
+<body>
+<div id="cursor"></div>
+<div id="cursor-ring"></div>
+<a href="https://wa.me/2347019263030" class="wa-float" target="_blank" rel="noopener" aria-label="WhatsApp">💬</a>
+
+<nav id="mainNav">
+  <a href="index.html" class="nav-logo">Abokee <span>Wings</span></a>
+  <div class="nav-links">
+    <a href="index.html">Home</a><a href="about-us.html">About</a><a href="services.html">Services</a>
+    <a href="destinations.html">Destinations</a><a href="blog.html">Blog</a>
+    <a href="contact-us.html" class="active nav-cta">Get Started</a>
   </div>
+  <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+</nav>
+<div class="mobile-nav" id="mobileNav">
+  <a href="index.html">Home</a><a href="about-us.html">About</a><a href="services.html">Services</a>
+  <a href="destinations.html">Destinations</a><a href="blog.html">Blog</a>
+  <a href="contact-us.html" class="nav-cta">Get Started</a>
 </div>
 
-<!-- HERO -->
-<div style="background:linear-gradient(160deg,rgba(26,5,51,0.9),rgba(45,10,82,0.85)),url('https://images.unsplash.com/photo-1521791136064-7986c2920216?w=1600&q=80') center/cover;padding:90px 5%;text-align:center;box-sizing:border-box;">
-  <div style="font-size:11px;letter-spacing:3px;text-transform:uppercase;color:#f5a623;margin-bottom:14px;font-weight:600;">Let's Talk</div>
-  <h1 style="font-family:'Playfair Display',Georgia,serif;font-size:clamp(36px,5vw,68px);font-weight:900;line-height:1.05;margin:0 0 18px 0;">Contact <em style="font-style:italic;color:#f5a623;">Us</em></h1>
-  <p style="font-size:16px;color:rgba(249,245,255,0.65);max-width:500px;margin:0 auto;line-height:1.8;">Ready to plan your next trip? Reach out and our team will get back to you within 24 hours.</p>
-</div>
+<section class="page-hero">
+  <div class="page-hero-bg"></div>
+  <div class="page-hero-overlay"></div>
+  <div class="page-hero-content">
+    <div class="page-label">Let's Talk</div>
+    <h1 class="page-h1">Contact <em>Us</em></h1>
+    <p class="page-sub">Ready to plan your next trip? Reach out and our team will get back to you within 24 hours.</p>
+  </div>
+</section>
 
-<!-- CONTACT LAYOUT -->
-<div style="background:#1a0533;padding:90px 5%;box-sizing:border-box;">
-  <div style="max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1.4fr;gap:60px;align-items:start;">
-
-    <!-- Contact Info -->
-    <div>
-      <h2 style="font-family:'Playfair Display',Georgia,serif;font-size:clamp(26px,3vw,40px);font-weight:700;margin:0 0 10px 0;">Get In <em style="font-style:italic;color:#f5a623;">Touch</em></h2>
-      <p style="font-size:15px;color:rgba(249,245,255,0.6);line-height:1.85;margin:0 0 44px 0;">Whether you're planning a holiday, need a visa, or want to book flights for your team — we're here to help. Send us a message or reach us directly.</p>
-
-      <div style="display:flex;flex-direction:column;gap:24px;">
-        <div style="display:flex;gap:18px;align-items:flex-start;">
-          <div style="width:48px;height:48px;border-radius:50%;background:#f5a623;display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0;">📧</div>
+<section class="contact-section">
+  <div class="contact-inner">
+    <!-- INFO -->
+    <div class="reveal">
+      <h2 class="contact-heading">Get In <em>Touch</em></h2>
+      <p class="contact-intro">Whether you're planning a holiday, need a visa, or want to book flights for your team — we're here to help. Send us a message or reach us directly.</p>
+      <div class="info-items">
+        <div class="info-item">
+          <div class="info-icon">📧</div>
           <div>
-            <div style="font-size:12px;letter-spacing:2px;text-transform:uppercase;color:#f5a623;margin-bottom:5px;font-weight:600;">Email</div>
-            <a href="mailto:abokeewings@gmail.com" style="font-size:15px;color:#f9f5ff;text-decoration:none;font-weight:500;">abokeewings@gmail.com</a>
+            <div class="info-label">Email</div>
+            <div class="info-val"><a href="mailto:abokeewings@gmail.com">abokeewings@gmail.com</a></div>
           </div>
         </div>
-        <div style="display:flex;gap:18px;align-items:flex-start;">
-          <div style="width:48px;height:48px;border-radius:50%;background:#f5a623;display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0;">📞</div>
+        <div class="info-item">
+          <div class="info-icon">📞</div>
           <div>
-            <div style="font-size:12px;letter-spacing:2px;text-transform:uppercase;color:#f5a623;margin-bottom:5px;font-weight:600;">Phone</div>
-            <div style="font-size:15px;color:#f9f5ff;font-weight:500;">+234 701 926 3030</div>
-            <div style="font-size:15px;color:#f9f5ff;font-weight:500;">+966 549 784 248</div>
+            <div class="info-label">Phone</div>
+            <div class="info-val">+234 701 926 3030<br>+966 549 784 248</div>
           </div>
         </div>
-        <div style="display:flex;gap:18px;align-items:flex-start;">
-          <div style="width:48px;height:48px;border-radius:50%;background:#f5a623;display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0;">📍</div>
+        <div class="info-item">
+          <div class="info-icon">📍</div>
           <div>
-            <div style="font-size:12px;letter-spacing:2px;text-transform:uppercase;color:#f5a623;margin-bottom:5px;font-weight:600;">Office</div>
-            <div style="font-size:15px;color:#f9f5ff;line-height:1.7;">Karamah House, Suite No 4,<br>First Floor, Addis-Ababa Crescent,<br>Abuja, Nigeria</div>
+            <div class="info-label">Office</div>
+            <div class="info-val">Karamah House, Suite No 4,<br>First Floor, Addis-Ababa Crescent,<br>Abuja, Nigeria</div>
           </div>
         </div>
-        <div style="display:flex;gap:18px;align-items:flex-start;">
-          <div style="width:48px;height:48px;border-radius:50%;background:#f5a623;display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0;">🕐</div>
+        <div class="info-item">
+          <div class="info-icon">🕐</div>
           <div>
-            <div style="font-size:12px;letter-spacing:2px;text-transform:uppercase;color:#f5a623;margin-bottom:5px;font-weight:600;">Hours</div>
-            <div style="font-size:15px;color:#f9f5ff;line-height:1.7;">Monday – Friday: 8am – 6pm<br>Saturday: 9am – 3pm<br>Sunday: Closed</div>
+            <div class="info-label">Hours</div>
+            <div class="info-val">Mon – Fri: 8am – 6pm<br>Saturday: 9am – 3pm<br>Sunday: Closed</div>
           </div>
         </div>
       </div>
-
-      <!-- Social Links -->
-      <div style="margin-top:40px;padding-top:32px;border-top:1px solid rgba(245,166,35,0.15);">
-        <div style="font-size:12px;letter-spacing:2px;text-transform:uppercase;color:#f5a623;margin-bottom:16px;font-weight:600;">Follow Us</div>
-        <div style="display:flex;gap:12px;flex-wrap:wrap;">
-          <a href="https://www.facebook.com/share/1b1eeQDyXR/" style="display:flex;align-items:center;gap:8px;color:rgba(249,245,255,0.65);text-decoration:none;font-size:13px;background:#2d0a52;padding:9px 16px;border-radius:6px;">📘 Facebook</a>
-          <a href="https://www.instagram.com/abokeewings" style="display:flex;align-items:center;gap:8px;color:rgba(249,245,255,0.65);text-decoration:none;font-size:13px;background:#2d0a52;padding:9px 16px;border-radius:6px;">📸 Instagram</a>
-          <a href="https://x.com/@abokeewings" style="display:flex;align-items:center;gap:8px;color:rgba(249,245,255,0.65);text-decoration:none;font-size:13px;background:#2d0a52;padding:9px 16px;border-radius:6px;">𝕏 Twitter</a>
-          <a href="https://www.tiktok.com/@abokee.wings" style="display:flex;align-items:center;gap:8px;color:rgba(249,245,255,0.65);text-decoration:none;font-size:13px;background:#2d0a52;padding:9px 16px;border-radius:6px;">♪ TikTok</a>
+      <div class="social-section">
+        <div class="social-label">Follow Us</div>
+        <div class="social-btns">
+          <a href="https://www.facebook.com/share/1b1eeQDyXR/" class="social-pill" target="_blank">📘 Facebook</a>
+          <a href="https://www.instagram.com/abokeewings" class="social-pill" target="_blank">📸 Instagram</a>
+          <a href="https://x.com/@abokeewings" class="social-pill" target="_blank">𝕏 Twitter</a>
+          <a href="http://youtube.com/@abokeewings" class="social-pill" target="_blank">▶ YouTube</a>
         </div>
       </div>
     </div>
 
-    <!-- Contact Form -->
-    <div style="background:#2d0a52;border-radius:12px;padding:44px;box-sizing:border-box;">
-      <h3 style="font-family:'Playfair Display',Georgia,serif;font-size:26px;font-weight:700;margin:0 0 8px 0;">Send Us a <em style="font-style:italic;color:#f5a623;">Message</em></h3>
-      <p style="font-size:14px;color:rgba(249,245,255,0.55);margin:0 0 32px 0;line-height:1.7;">Fill in the form and we'll respond within 24 hours.</p>
-
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px;">
+    <!-- FORM -->
+    <div class="form-card reveal reveal-delay-1">
+      <h3 class="form-title">Send Us a <em>Message</em></h3>
+      <p class="form-sub">Fill in the form and we'll respond within 24 hours.</p>
+      <div class="form-row">
         <div>
-          <label style="display:block;font-size:12px;letter-spacing:1px;text-transform:uppercase;color:#f5a623;margin-bottom:8px;font-weight:600;">First Name</label>
-          <input type="text" placeholder="John" style="width:100%;background:#1a0533;border:1px solid rgba(245,166,35,0.25);border-radius:6px;padding:13px 16px;color:#f9f5ff;font-size:14px;font-family:'DM Sans',sans-serif;box-sizing:border-box;outline:none;">
+          <label class="form-label">First Name</label>
+          <input type="text" placeholder="John" class="form-input">
         </div>
         <div>
-          <label style="display:block;font-size:12px;letter-spacing:1px;text-transform:uppercase;color:#f5a623;margin-bottom:8px;font-weight:600;">Last Name</label>
-          <input type="text" placeholder="Doe" style="width:100%;background:#1a0533;border:1px solid rgba(245,166,35,0.25);border-radius:6px;padding:13px 16px;color:#f9f5ff;font-size:14px;font-family:'DM Sans',sans-serif;box-sizing:border-box;outline:none;">
+          <label class="form-label">Last Name</label>
+          <input type="text" placeholder="Doe" class="form-input">
         </div>
       </div>
-      <div style="margin-bottom:16px;">
-        <label style="display:block;font-size:12px;letter-spacing:1px;text-transform:uppercase;color:#f5a623;margin-bottom:8px;font-weight:600;">Email Address</label>
-        <input type="email" placeholder="john@example.com" style="width:100%;background:#1a0533;border:1px solid rgba(245,166,35,0.25);border-radius:6px;padding:13px 16px;color:#f9f5ff;font-size:14px;font-family:'DM Sans',sans-serif;box-sizing:border-box;outline:none;">
+      <div class="form-field">
+        <label class="form-label">Email Address</label>
+        <input type="email" placeholder="john@example.com" class="form-input">
       </div>
-      <div style="margin-bottom:16px;">
-        <label style="display:block;font-size:12px;letter-spacing:1px;text-transform:uppercase;color:#f5a623;margin-bottom:8px;font-weight:600;">Phone Number</label>
-        <input type="tel" placeholder="+234 800 000 0000" style="width:100%;background:#1a0533;border:1px solid rgba(245,166,35,0.25);border-radius:6px;padding:13px 16px;color:#f9f5ff;font-size:14px;font-family:'DM Sans',sans-serif;box-sizing:border-box;outline:none;">
+      <div class="form-field">
+        <label class="form-label">Phone Number</label>
+        <input type="tel" placeholder="+234 800 000 0000" class="form-input">
       </div>
-      <div style="margin-bottom:16px;">
-        <label style="display:block;font-size:12px;letter-spacing:1px;text-transform:uppercase;color:#f5a623;margin-bottom:8px;font-weight:600;">Service Needed</label>
-        <select style="width:100%;background:#1a0533;border:1px solid rgba(245,166,35,0.25);border-radius:6px;padding:13px 16px;color:#f9f5ff;font-size:14px;font-family:'DM Sans',sans-serif;box-sizing:border-box;outline:none;appearance:none;">
+      <div class="form-field">
+        <label class="form-label">Service Needed</label>
+        <select class="form-input">
           <option value="">Select a service...</option>
           <option>Flight Booking</option>
           <option>Hotel Reservation</option>
@@ -111,33 +247,61 @@
           <option>Travel Planning</option>
         </select>
       </div>
-      <div style="margin-bottom:24px;">
-        <label style="display:block;font-size:12px;letter-spacing:1px;text-transform:uppercase;color:#f5a623;margin-bottom:8px;font-weight:600;">Message</label>
-        <textarea placeholder="Tell us about your travel plans, destination, dates, budget..." rows="5" style="width:100%;background:#1a0533;border:1px solid rgba(245,166,35,0.25);border-radius:6px;padding:13px 16px;color:#f9f5ff;font-size:14px;font-family:'DM Sans',sans-serif;box-sizing:border-box;outline:none;resize:vertical;"></textarea>
+      <div class="form-field">
+        <label class="form-label">Message</label>
+        <textarea placeholder="Tell us about your travel plans, destination, dates, budget..." class="form-input"></textarea>
       </div>
-      <button style="width:100%;background:#f5a623;color:#1a0533;padding:16px;font-size:14px;font-weight:700;border:none;border-radius:6px;cursor:pointer;font-family:'DM Sans',sans-serif;letter-spacing:1px;">Send Message →</button>
-      <p style="font-size:12px;color:rgba(249,245,255,0.4);text-align:center;margin:16px 0 0 0;">We'll respond within 24 hours. No spam, ever.</p>
+      <button class="submit-btn">Send Message →</button>
+      <p class="form-note">We'll respond within 24 hours. No spam, ever.</p>
     </div>
   </div>
-</div>
+</section>
 
-<!-- WHATSAPP CTA -->
-<div style="background:#2d0a52;padding:60px 5%;text-align:center;box-sizing:border-box;border-top:1px solid rgba(245,166,35,0.1);">
-  <div style="font-size:36px;margin-bottom:16px;">💬</div>
-  <h3 style="font-family:'Playfair Display',Georgia,serif;font-size:clamp(24px,3vw,36px);font-weight:700;margin:0 0 12px 0;">Prefer WhatsApp?</h3>
-  <p style="font-size:15px;color:rgba(249,245,255,0.6);margin:0 0 28px 0;line-height:1.7;">Chat with us directly for quick responses and instant booking assistance.</p>
-  <a href="https://wa.me/2347019263030" style="background:#25D366;color:#fff;padding:14px 36px;font-size:14px;font-weight:700;text-decoration:none;border-radius:4px;display:inline-block;">Chat on WhatsApp</a>
-</div>
+<!-- WHATSAPP -->
+<section class="wa-section">
+  <span class="wa-icon">💬</span>
+  <h3 class="wa-h3 reveal">Prefer <em>WhatsApp?</em></h3>
+  <p class="wa-p reveal reveal-delay-1">Chat with us directly for quick responses and instant booking assistance. We're always a message away.</p>
+  <a href="https://wa.me/2347019263030" class="wa-btn reveal reveal-delay-2" target="_blank" rel="noopener">
+    <span>💬</span> Chat on WhatsApp
+  </a>
+</section>
 
-<!-- FOOTER -->
-<div style="background:#0d0120;padding:70px 5% 30px;border-top:1px solid rgba(245,166,35,0.15);box-sizing:border-box;">
-  <div style="max-width:1200px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr 1.5fr;gap:48px;margin-bottom:48px;">
-    <div><div style="font-family:'Playfair Display',Georgia,serif;font-size:24px;font-weight:900;color:#f9f5ff;margin-bottom:14px;">Abokee<span style="color:#f5a623;">Flights</span></div><p style="font-size:13px;color:rgba(249,245,255,0.45);line-height:1.9;margin:0 0 22px 0;">Licensed travel and tour experts providing trusted flight, hotel, and tour solutions.</p><div style="display:flex;gap:8px;"><a href="#" style="width:34px;height:34px;border-radius:50%;background:rgba(245,166,35,0.12);display:flex;align-items:center;justify-content:center;font-size:13px;color:#f5a623;text-decoration:none;">f</a><a href="#" style="width:34px;height:34px;border-radius:50%;background:rgba(245,166,35,0.12);display:flex;align-items:center;justify-content:center;font-size:13px;color:#f5a623;text-decoration:none;">ig</a><a href="#" style="width:34px;height:34px;border-radius:50%;background:rgba(245,166,35,0.12);display:flex;align-items:center;justify-content:center;font-size:13px;color:#f5a623;text-decoration:none;">𝕏</a></div></div>
-    <div><div style="font-size:11px;letter-spacing:2px;text-transform:uppercase;color:#f5a623;margin-bottom:18px;font-weight:600;">Quick Links</div><div style="font-size:13px;line-height:2.6;"><a href="https://abokeeflights.wordpress.com" style="color:rgba(249,245,255,0.5);text-decoration:none;display:block;">Home</a><a href="https://abokeeflights.wordpress.com/about-us" style="color:rgba(249,245,255,0.5);text-decoration:none;display:block;">About Us</a><a href="https://abokeeflights.wordpress.com/services" style="color:rgba(249,245,255,0.5);text-decoration:none;display:block;">Services</a><a href="https://abokeeflights.wordpress.com/destinations" style="color:rgba(249,245,255,0.5);text-decoration:none;display:block;">Destinations</a><a href="https://abokeeflights.wordpress.com/contact-us" style="color:rgba(249,245,255,0.5);text-decoration:none;display:block;">Contact</a></div></div>
-    <div><div style="font-size:11px;letter-spacing:2px;text-transform:uppercase;color:#f5a623;margin-bottom:18px;font-weight:600;">Services</div><div style="font-size:13px;line-height:2.6;"><a href="#" style="color:rgba(249,245,255,0.5);text-decoration:none;display:block;">Flight Bookings</a><a href="#" style="color:rgba(249,245,255,0.5);text-decoration:none;display:block;">Hotel Reservations</a><a href="#" style="color:rgba(249,245,255,0.5);text-decoration:none;display:block;">Tour Packages</a><a href="#" style="color:rgba(249,245,255,0.5);text-decoration:none;display:block;">Visa Assistance</a></div></div>
-    <div><div style="font-size:11px;letter-spacing:2px;text-transform:uppercase;color:#f5a623;margin-bottom:18px;font-weight:600;">Contact Info</div><div style="font-size:13px;color:rgba(249,245,255,0.5);line-height:2.0;"><div style="color:#f5a623;margin-bottom:2px;font-weight:600;">Email</div><a href="mailto:abokeewings@gmail.com" style="color:rgba(249,245,255,0.5);text-decoration:none;">abokeewings@gmail.com</a><div style="color:#f5a623;margin-top:14px;margin-bottom:2px;font-weight:600;">Phone</div>+234 701 926 3030<div style="color:#f5a623;margin-top:14px;margin-bottom:2px;font-weight:600;">Office</div>Karamah House, Suite 4,<br>Addis-Ababa Crescent, Abuja</div></div>
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <span class="logo-f">Abokee <span>Wings</span></span>
+      <p>Licensed travel and tour experts providing trusted flight, hotel, and tour solutions with a commitment to comfort and memorable experiences.</p>
+      <div class="social-row">
+        <a href="https://www.facebook.com/share/1b1eeQDyXR/" class="social-btn" target="_blank">f</a>
+        <a href="https://www.instagram.com/abokeewings" class="social-btn" target="_blank">ig</a>
+        <a href="https://x.com/@abokeewings" class="social-btn" target="_blank">𝕏</a>
+        <a href="http://youtube.com/@abokeewings" class="social-btn" target="_blank">▶</a>
+      </div>
+    </div>
+    <div><div class="footer-col-title">Quick Links</div><div class="footer-links"><a href="index.html">Home</a><a href="about-us.html">About Us</a><a href="services.html">Services</a><a href="destinations.html">Destinations</a><a href="blog.html">Blog</a><a href="contact-us.html">Contact</a></div></div>
+    <div><div class="footer-col-title">Services</div><div class="footer-links"><a href="services.html">Flight Bookings</a><a href="services.html">Hotel Reservations</a><a href="services.html">Tour Packages</a><a href="services.html">Visa Assistance</a></div></div>
+    <div><div class="footer-col-title">Contact Info</div>
+      <div class="fci"><div class="lbl">Email</div><a href="mailto:abokeewings@gmail.com">abokeewings@gmail.com</a></div>
+      <div class="fci"><div class="lbl">Phone</div><div>+234 701 926 3030<br>+966 549 784 248</div></div>
+      <div class="fci"><div class="lbl">Office</div><div>Karamah House, Suite 4,<br>Addis-Ababa Crescent, Abuja</div></div>
+    </div>
   </div>
-  <div style="border-top:1px solid rgba(245,166,35,0.12);padding-top:22px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;font-size:12px;color:rgba(249,245,255,0.35);"><span>© 2026 <span style="color:#f5a623;">Abokee Flights</span>. All Rights Reserved.</span><span>Licensed Travel Agency · Nigeria</span></div>
-</div>
+  <div class="footer-bottom"><span>© 2026 <b>Abokee Wings</b>. All Rights Reserved.</span><span>Licensed Travel Agency · Nigeria</span></div>
+</footer>
 
-</div>
+<script>
+const cursor=document.getElementById('cursor'),ring=document.getElementById('cursor-ring');
+let mx=0,my=0,rx=0,ry=0;
+document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;cursor.style.transform=`translate(${mx-6}px,${my-6}px)`;});
+(function anim(){rx+=(mx-rx)*.12;ry+=(my-ry)*.12;ring.style.transform=`translate(${rx-18}px,${ry-18}px)`;requestAnimationFrame(anim);})();
+const nav=document.getElementById('mainNav');
+window.addEventListener('scroll',()=>nav.classList.toggle('scrolled',scrollY>40));
+const hbg=document.getElementById('hamburger'),mNav=document.getElementById('mobileNav');
+mNav.style.display='none';
+hbg.addEventListener('click',()=>{hbg.classList.toggle('open');mNav.classList.toggle('visible');mNav.style.display=mNav.classList.contains('visible')?'flex':'none';});
+const obs=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');obs.unobserve(e.target);}}),{threshold:0.1});
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+</script>
+</body>
+</html>
