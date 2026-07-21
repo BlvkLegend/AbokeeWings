@@ -27,27 +27,6 @@
     color: var(--cream);
     overflow-x: hidden;
   }
-  /* ── CUSTOM CURSOR ── */
-  body { cursor: none; }
-  #cursor {
-    width: 12px; height: 12px;
-    background: var(--gold);
-    border-radius: 50%;
-    position: fixed; top: 0; left: 0;
-    pointer-events: none; z-index: 99999;
-    transition: transform 0.15s ease, opacity 0.15s;
-    mix-blend-mode: difference;
-  }
-  #cursor-ring {
-    width: 36px; height: 36px;
-    border: 1.5px solid var(--gold);
-    border-radius: 50%;
-    position: fixed; top: 0; left: 0;
-    pointer-events: none; z-index: 99998;
-    transition: transform 0.35s cubic-bezier(.25,.46,.45,.94);
-    opacity: 0.6;
-  }
-  a, button { cursor: none; }
 
   /* ── NAV ── */
   nav {
@@ -336,7 +315,8 @@
   .service-card:hover { background: #380d68; transform: translateY(-4px); }
   .service-card:hover::before { transform: scaleX(1); }
   .service-card:hover::after { opacity: 1; }
-  .service-icon { font-size: 36px; margin-bottom: 20px; display: block; }
+  .service-icon { margin-bottom: 20px; display: block; }
+  .service-icon svg { width: 32px; height: 32px; stroke: var(--gold); }
   .service-card h3 {
     font-family: 'Cormorant Garamond', serif;
     font-size: 22px; font-weight: 700; margin-bottom: 12px;
@@ -439,15 +419,7 @@
     color: var(--cream); margin-bottom: 24px;
   }
   .testi-stars { color: var(--gold); font-size: 13px; margin-bottom: 20px; letter-spacing: 2px; }
-  .testi-author { display: flex; align-items: center; gap: 14px; }
-  .testi-avatar {
-    width: 44px; height: 44px; border-radius: 50%;
-    background: var(--gold);
-    display: flex; align-items: center; justify-content: center;
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 18px; font-weight: 700; color: var(--deep);
-    flex-shrink: 0; box-shadow: 0 0 16px var(--gold-glow);
-  }
+  .testi-author { display: flex; align-items: center; gap: 14px; padding-left: 14px; border-left: 2px solid var(--gold); }
   .testi-name { font-size: 14px; font-weight: 600; color: var(--cream); }
   .testi-city { font-size: 12px; color: var(--dimmer); margin-top: 2px; }
 
@@ -576,8 +548,6 @@
 <body>
 
 <!-- CURSOR -->
-<div id="cursor"></div>
-<div id="cursor-ring"></div>
 
 <!-- WHATSAPP FLOAT -->
 <a href="https://wa.me/2347019263030" class="wa-float" target="_blank" rel="noopener" aria-label="WhatsApp">💬</a>
@@ -616,7 +586,7 @@
     
     <h1 class="hero-h1">For Every<br><em>Journey.</em></h1>
     <p class="hero-sub">For Every Reason. For Every Destination.</p>
-    <p class="hero-p">Expert flight bookings, hotel reservations, curated tours, visa assistance — all from one trusted agency in Abuja.</p>
+    <p class="hero-p">Expert flight bookings, hotel reservations, curated tours, visa assistance — all from one agency in Abuja.</p>
     <div class="hero-btns">
       <a href="contact-us.html" class="btn-primary">Start Your Journey</a>
       <a href="services.html" class="btn-ghost">Our Services</a>
@@ -631,23 +601,23 @@
 <!-- TICKER -->
 <div class="ticker" aria-hidden="true">
   <div class="ticker-inner">
-    <span class="ticker-item">✈ Flight Bookings</span>
-    <span class="ticker-item">✦ Hotel Reservations</span>
-    <span class="ticker-item">✈ Visa Assistance</span>
-    <span class="ticker-item">✦ Tour Packages</span>
-    <span class="ticker-item">✈ Corporate Travel</span>
-    <span class="ticker-item">✦ Airport Transfers</span>
-    <span class="ticker-item">✈ Group Travel</span>
-    <span class="ticker-item">✦ Travel Planning</span>
+    <span class="ticker-item">Flight Bookings</span>
+    <span class="ticker-item">Hotel Reservations</span>
+    <span class="ticker-item">Visa Assistance</span>
+    <span class="ticker-item">Tour Packages</span>
+    <span class="ticker-item">Corporate Travel</span>
+    <span class="ticker-item">Airport Transfers</span>
+    <span class="ticker-item">Group Travel</span>
+    <span class="ticker-item">Travel Planning</span>
     <!-- duplicate for seamless loop -->
-    <span class="ticker-item">✈ Flight Bookings</span>
-    <span class="ticker-item">✦ Hotel Reservations</span>
-    <span class="ticker-item">✈ Visa Assistance</span>
-    <span class="ticker-item">✦ Tour Packages</span>
-    <span class="ticker-item">✈ Corporate Travel</span>
-    <span class="ticker-item">✦ Airport Transfers</span>
-    <span class="ticker-item">✈ Group Travel</span>
-    <span class="ticker-item">✦ Travel Planning</span>
+    <span class="ticker-item">Flight Bookings</span>
+    <span class="ticker-item">Hotel Reservations</span>
+    <span class="ticker-item">Visa Assistance</span>
+    <span class="ticker-item">Tour Packages</span>
+    <span class="ticker-item">Corporate Travel</span>
+    <span class="ticker-item">Airport Transfers</span>
+    <span class="ticker-item">Group Travel</span>
+    <span class="ticker-item">Travel Planning</span>
   </div>
 </div>
 
@@ -664,7 +634,7 @@
       </div>
       <div class="about-text">
         <div class="section-label reveal">About Abokee Wings</div>
-        <h2 class="section-h2 reveal reveal-delay-1">Nigeria's Most <em>Trusted</em> Travel Partner</h2>
+        <h2 class="section-h2 reveal reveal-delay-1">A Fully Licensed Agency, Built Around You</h2>
         <p class="reveal reveal-delay-2">Abokee Wings is a fully licensed travel and tour agency based in Abuja, delivering premium services to individuals, families, and corporate clients across Nigeria and internationally.</p>
         <p class="reveal reveal-delay-2">From your first flight booking to a fully planned group tour, we handle every detail so your only job is to enjoy the journey.</p>
         <a href="about-us.html" class="btn-outline reveal reveal-delay-3">Learn More About Us</a>
@@ -687,7 +657,7 @@
     </div>
     <div class="services-grid">
       <div class="service-card reveal">
-        <span class="service-icon">✈️</span>
+        <span class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 3L3 10.5l7.5 3L13.5 21 21 3z"/><path d="M10.5 13.5L21 3"/></svg></span>
         <h3>Flight Bookings</h3>
         <p>Local and international routes at the most affordable and convenient fares.</p>
         <div class="service-tags">
@@ -697,7 +667,7 @@
         </div>
       </div>
       <div class="service-card reveal reveal-delay-1">
-        <span class="service-icon">🏨</span>
+        <span class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 19v-6a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v6"/><path d="M2 19h20"/><path d="M6 11V7a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v4"/></svg></span>
         <h3>Hotel Reservations</h3>
         <p>Budget-friendly to luxury stays — we find and book the perfect accommodation for you.</p>
         <div class="service-tags">
@@ -707,7 +677,7 @@
         </div>
       </div>
       <div class="service-card reveal reveal-delay-2">
-        <span class="service-icon">🗺️</span>
+        <span class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><polygon points="16 8 14 14 8 16 10 10 16 8"/></svg></span>
         <h3>Tour Packages</h3>
         <p>Curated travel experiences with guided tours, transfers, and accommodation included.</p>
         <div class="service-tags">
@@ -717,7 +687,7 @@
         </div>
       </div>
       <div class="service-card reveal reveal-delay-3">
-        <span class="service-icon">📋</span>
+        <span class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="3" width="14" height="18" rx="2"/><circle cx="12" cy="9" r="2.5"/><line x1="8" y1="16" x2="16" y2="16"/><line x1="8" y1="13.5" x2="16" y2="13.5"/></svg></span>
         <h3>Visa Assistance</h3>
         <p>Expert guidance on visa applications for all major countries — Schengen, UK, USA, UAE and more.</p>
         <div class="service-tags">
@@ -727,7 +697,7 @@
         </div>
       </div>
       <div class="service-card reveal">
-        <span class="service-icon">💼</span>
+        <span class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/><line x1="3" y1="13" x2="21" y2="13"/></svg></span>
         <h3>Corporate Travel</h3>
         <p>Dedicated travel management for businesses — flights, hotels, and logistics handled efficiently.</p>
         <div class="service-tags">
@@ -736,7 +706,7 @@
         </div>
       </div>
       <div class="service-card reveal reveal-delay-1">
-        <span class="service-icon">🚐</span>
+        <span class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 16V8a1 1 0 0 1 1-1h9l4 4v5"/><circle cx="7.5" cy="17.5" r="1.8"/><circle cx="16.5" cy="17.5" r="1.8"/><line x1="9.3" y1="17.5" x2="14.7" y2="17.5"/></svg></span>
         <h3>Airport Transfers</h3>
         <p>Reliable, comfortable airport pickup and drop-off services — always on time.</p>
         <div class="service-tags">
@@ -845,7 +815,7 @@
         What Our Clients Say
         <span style="display:block; width:32px; height:1px; background:var(--gold);"></span>
       </div>
-      <h2 class="section-h2 reveal">Trusted by <em>Travellers</em></h2>
+      <h2 class="section-h2 reveal">What <em>Travellers</em> Say</h2>
     </div>
     <div class="testi-grid">
       <div class="testi-card reveal">
@@ -853,7 +823,6 @@
         <div class="testi-stars">★★★★★</div>
         <p class="testi-text">Abokee Wings got me my Schengen visa in record time and the best flight price I could find. Truly a game-changer for Nigerian travellers.</p>
         <div class="testi-author">
-          <div class="testi-avatar">C</div>
           <div><div class="testi-name">Chidi O.</div><div class="testi-city">Lagos</div></div>
         </div>
       </div>
@@ -862,7 +831,6 @@
         <div class="testi-stars">★★★★★</div>
         <p class="testi-text">Our company has used Abokee Wings for all corporate travel needs. They are professional, responsive, and always deliver. Highly recommended!</p>
         <div class="testi-author">
-          <div class="testi-avatar" style="background:var(--gold2);">A</div>
           <div><div class="testi-name">Ahmed S.</div><div class="testi-city">Kano</div></div>
         </div>
       </div>
@@ -871,7 +839,6 @@
         <div class="testi-stars">★★★★★</div>
         <p class="testi-text">From planning to arrival, Abokee Wings exceeded every expectation. The entire experience was seamless and joyful. Will absolutely use again!</p>
         <div class="testi-author">
-          <div class="testi-avatar">B</div>
           <div><div class="testi-name">Blessing K.</div><div class="testi-city">Port Harcourt</div></div>
         </div>
       </div>
@@ -885,7 +852,7 @@
   <div class="cta-overlay"></div>
   <div class="cta-inner">
     <div class="cta-label reveal">Ready to Explore?</div>
-    <h2 class="cta-h2 reveal reveal-delay-1">Plan Your Next <em>Adventure</em></h2>
+    <h2 class="cta-h2 reveal reveal-delay-1">Let's Plan Your Next Trip</h2>
     <p class="cta-p reveal reveal-delay-2">Partner with Abokee Wings for reliable, personalised, and seamless travel experiences.</p>
     <div class="cta-btns reveal reveal-delay-3">
       <a href="contact-us.html" class="btn-primary">Book Now</a>
@@ -899,7 +866,7 @@
   <div class="footer-grid">
     <div class="footer-brand">
       <span class="logo-f">Abokee <span>Wings</span></span>
-      <p>Licensed travel and tour experts providing trusted flight, hotel, and tour solutions with a commitment to comfort and memorable experiences.</p>
+      <p>Licensed travel and tour experts handling flight, hotel, and tour logistics with a commitment to comfort and memorable experiences.</p>
       <div class="social-row">
         <a href="https://www.facebook.com/share/1b1eeQDyXR/" class="social-btn" target="_blank" rel="noopener">f</a>
         <a href="https://www.instagram.com/abokeewings" class="social-btn" target="_blank" rel="noopener">ig</a>
@@ -952,26 +919,6 @@
 </footer>
 
 <script>
-// Custom cursor
-const cursor = document.getElementById('cursor');
-const ring = document.getElementById('cursor-ring');
-let mx = 0, my = 0, rx = 0, ry = 0;
-document.addEventListener('mousemove', e => {
-  mx = e.clientX; my = e.clientY;
-  cursor.style.transform = `translate(${mx - 6}px, ${my - 6}px)`;
-});
-function animRing() {
-  rx += (mx - rx) * 0.12;
-  ry += (my - ry) * 0.12;
-  ring.style.transform = `translate(${rx - 18}px, ${ry - 18}px)`;
-  requestAnimationFrame(animRing);
-}
-animRing();
-document.querySelectorAll('a, button').forEach(el => {
-  el.addEventListener('mouseenter', () => { cursor.style.transform += ' scale(2)'; ring.style.transform += ' scale(1.4)'; ring.style.opacity = '0.3'; });
-  el.addEventListener('mouseleave', () => { ring.style.opacity = '0.6'; });
-});
-
 // Nav scroll
 const nav = document.getElementById('mainNav');
 window.addEventListener('scroll', () => {
