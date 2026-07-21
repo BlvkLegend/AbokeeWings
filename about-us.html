@@ -14,10 +14,9 @@
   }
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
   html { scroll-behavior: smooth; }
-  body { font-family: 'Outfit', sans-serif; background: var(--deep); color: var(--cream); overflow-x: hidden; cursor: none; }
+  body { font-family: 'Outfit', sans-serif; background: var(--deep); color: var(--cream); overflow-x: hidden; }
   #cursor { width:12px;height:12px;background:var(--gold);border-radius:50%;position:fixed;top:0;left:0;pointer-events:none;z-index:99999;mix-blend-mode:difference; }
   #cursor-ring { width:36px;height:36px;border:1.5px solid var(--gold);border-radius:50%;position:fixed;top:0;left:0;pointer-events:none;z-index:99998;opacity:0.6;transition:transform 0.35s cubic-bezier(.25,.46,.45,.94); }
-  a, button { cursor: none; }
 
   nav { position:fixed;top:0;left:0;right:0;z-index:9000;padding:0 5%;display:flex;align-items:center;justify-content:space-between;height:72px;transition:background 0.4s,box-shadow 0.4s; }
   nav.scrolled { background:rgba(10,1,24,0.92);backdrop-filter:blur(20px);box-shadow:0 1px 0 rgba(245,166,35,0.15),0 8px 32px rgba(0,0,0,0.4); }
@@ -292,7 +291,7 @@
   <div class="cta-bg"></div>
   <div class="cta-overlay"></div>
   <div class="cta-inner">
-    <h2 class="cta-h2 reveal">Ready to Travel With <em>Us?</em></h2>
+    <h2 class="cta-h2 reveal">Ready to Travel With <em>Us</em>?</h2>
     <p class="cta-p reveal reveal-delay-1">Let's plan your next journey together. Get in touch today and our team will respond within 24 hours.</p>
     <a href="contact-us.html" class="btn-primary reveal reveal-delay-2">Contact Us</a>
   </div>
